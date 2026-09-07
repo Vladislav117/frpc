@@ -111,8 +111,8 @@ def build_frpc_config(config: dict[str, Any]) -> str:
         if not isinstance(route_type, str):
             fail(f"{context}.type must be a string")
         route_type = route_type.lower()
-        if route_type not in {"tcp", "udp", "http", "https"}:
-            fail(f"{context}.type must be TCP, UDP, HTTP or HTTPS")
+        if route_type not in {"tcp", "udp", "http"}:
+            fail(f"{context}.type must be TCP, UDP or HTTP")
 
         host, local_port = parse_address(require(route, "target", context), f"{context}.target")
         name = str(uuid.uuid4())
