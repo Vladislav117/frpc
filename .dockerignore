@@ -1,7 +1,5 @@
 .git
 .github
 README.md
-example/compose.example.yml
-example/frpc.json
 __pycache__
 *.pyc
