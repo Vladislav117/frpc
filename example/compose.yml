@@ -1,0 +1,16 @@
+services:
+  # TCP at 5000 and UDP at 5001
+  server:
+    image: ???
+
+  # HTTP at 3000
+  frontend:
+    image: ???
+
+  frpc:
+    image: ghcr.io/vladislav117/frpc:latest
+    restart: unless-stopped
+    environment:
+      FRP_TOKEN: ${FRP_TOKEN}
+    volumes:
+      - ./frpc.json:/app/frpc.json:ro
